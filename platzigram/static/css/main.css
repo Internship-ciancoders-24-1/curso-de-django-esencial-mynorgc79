@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
     background: #fafafa;
     height: 100%;
     width: 100%;
@@ -14,7 +13,7 @@ body {
 
 #main-navbar {
     background: #fff;
-    border-bottom: 1px solid rgba(0, 0, 0, .0975);
+    border-bottom: 1px solid rgba(0,0,0,.0975);
 }
 
 .post-container {
@@ -31,15 +30,12 @@ body {
     margin-left: 1.2em;
     font-weight: 100;
 }
-
 .nav-icon a:hover {
-    color: #1d5e72;
-    ;
+    color: #1d5e72;;
 }
-
 #profile-box {
     background: #fff;
-    border: 1px solid rgba(0, 0, 0, .0975);
+    border: 1px solid rgba(0,0,0,.0975);
     border-radius: 1px;
     margin-top: 6em;
 }
@@ -47,3 +43,4 @@ body {
 #user-posts #post-thumb {
     background: #fff;
 }
+

@@ -20,8 +20,7 @@ log/
 *.sqlite3
 *.sqlite3-journal
 
-# Archivos de medios generados
-media/
+
 
 # Archivos de configuración específicos de la implementación
 local_settings.py

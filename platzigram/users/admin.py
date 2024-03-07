@@ -1,14 +1,13 @@
-""" users admin classes """
-from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+"""User admin classes."""
 
-# Register your models here.
+# Django
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from django.contrib import admin
+
+# Models
 from django.contrib.auth.models import User
 from users.models import Profile
 
-
-
-# admin.site.register(Profile)
 
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
@@ -18,25 +17,22 @@ class ProfileAdmin(admin.ModelAdmin):
     list_display_links = ('pk', 'user',)
     list_editable = ('phone_number', 'website', 'picture')
 
+    search_fields = (
+        'user__email',
+        'user__username',
+        'user__first_name',
+        'user__last_name',
+        'phone_number'
+    )
 
-search_fields = (
-    'user__email',
-    'user__username',
-    'user__first_name',
-    'user__last_name',
-    'phone_number'
-)
-
-list_filter = (
+    list_filter = (
         'user__is_active',
         'user__is_staff',
         'created',
         'modified',
     )
 
-
-
-fieldsets = (
+    fieldsets = (
         ('Profile', {
             'fields': (('user', 'picture'),),
         }),
@@ -50,7 +46,8 @@ fieldsets = (
             'fields': (('created', 'modified'),),
         })
     )
-readonly_fields = ('created', 'modified',)
+
+    readonly_fields = ('created', 'modified',)
 
 
 class ProfileInline(admin.StackedInline):
